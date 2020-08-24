@@ -3,61 +3,63 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="sorta_source/sty.css">
-        <link rel="shortcut icon" type="image/png" href="imgs/RenderLogo.png"/>
+        <link rel="stylesheet" href="../sorta_source/sty.css">
+        <link rel="shortcut icon" type="image/png" href="../imgs/RenderLogo.png"/>
         <title>Prototipo alta fidelidad</title>
     </head>
     <body>
         <header>
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.html" id="rankie"><img src="/imgs/RenderLogoWhite.png" width="90px" height="48px"></a>
+            <a class="navbar-brand" href="indexc.html" id="rankie"><img src="../imgs/RenderLogoWhite.png" width="90px" height="48px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>              
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link text-white" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link text-white" href="indexc.html">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-light" href="whoweare.html">Quienes somos</a>
+                  <a class="nav-link text-light" href="whowearec.html">Quienes somos</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Clasificación
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item text-dark" href="results.html">Vegetales</a>
-                    <a class="dropdown-item text-dark" href="meat.html">Carnes</a>
-                    <a class="dropdown-item text-dark" href="fruits.html">Frutas</a>
+                    <a class="dropdown-item text-dark" href="resultsc.html">Vegetales</a>
+                    <a class="dropdown-item text-dark" href="meatc.html">Carnes</a>
+                    <a class="dropdown-item text-dark" href="fruitsc.html">Frutas</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-dark" href="#">Todos los productos</a>
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-light" href="#" onclick="" id="log">Sign In</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-light" href="#" onclick="">Log in</a>
+                  <a class="nav-link text-light" href="user.html" id="log">Nombre de usuario</a>
                 </li>               
               </ul>
               <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="¿Qué buscas?" aria-label="Buscar">
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="search" placeholder="¿Qué buscas?" aria-label="Buscar" id="srchtxtk">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit" id="srch" href="resultsc.html">Search</button>
               </form>
             </div>
-          </nav>
-        </header>
+          </nav>        
         <main>
-          <center><img src="imgs/RenderLogo.png" width="270px" height="200px"></center>
-            <div class="container" id="weare">
-                <center><h1>¿Quienes somos?</h1></center>
-                <p>Nos encargamos de baneficiar a las personas, realizando un servicio a domicilio, cuyo
-                objetivo es favorecer en ambos lados, el usuario, y a los dueños de los abarrotes, quienes son
-                los proveedores de los productos</p>
+            <div class="container" id="user_settings">
+                <div class="container" id="user_name">
+                    <img src="../imgs/RenderLogo.png" width="200px" height="200px">
+                    <a><p>Cambiar foto de perfil</p></a>
+                    <h2>Nombre de usuario</h2>
+                </div>
+                <div class="container" id="sttings">
+                    <a href="information.html" id="mijo"><button type="button" class="btn btn-warning btn-lg btn-block bg-warning text-light" id="infoaccount">Información</button></a>
+                    <a href="credit_card.html" id="mijo"><button type="button" class="btn btn-warning btn-lg btn-block bg-warning text-light" id="credit_cardAdd">Añadir tarjeta de crédito</button></a>
+                    <a href="with_user/indexc.html" id="mijo">
+                        <button type="button" class="btn btn-warning btn-lg btn-block bg-warning text-light" id="delete_account">Eliminar cuenta</button>
+                    </a>
+                </div>
             </div>
         </main>
-            <!--end main-->
         <footer>
             <div class="container text-center" id="furer">
                 <h3 id="cenres">Contáctanos en nuestras redes sociales</h3>

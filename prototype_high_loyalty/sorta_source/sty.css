@@ -186,3 +186,16 @@ h3{
     margin-top: 2cm;
     margin-bottom: 2.5cm;
 }
+#gl{
+    margin-bottom: 5px;
+}
+#mijo{
+    color: rgb(255, 161, 26);
+}
+#info_account{
+    margin: 1.6cm 1.6cm 2cm 4cm;
+}
+#creditCardAdd{
+    margin-top: 2cm;
+    margin-bottom: 1.5cm; 
+}
