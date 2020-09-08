@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../atoms/header';
-import Corpse from '../atoms/corpse';
+import Corpse from '../atoms/app/corpse';
+import Foot from '../atoms/footer';
 //divider
 function app() {
     return (
@@ -10,20 +11,24 @@ function app() {
                 title="Algunos productos"
                 cards={[
                     {
-                        name:"Producto1",
-                        desc:"util"
+                        name: "Producto1",
+                        desc: "util",
+                        button: "comprar"
                     },
                     {
-                        name:"producto2",
-                        desc:"también útil"
+                        name: "producto2",
+                        desc: "también útil",
+                        button: "comprar"
                     },
                     {
-                        name:"producto3",
-                        desc:"igualmente útil"
+                        name: "producto3",
+                        desc: "igualmente útil",
+                        button: "comprar"
                     }
                 ]}
                 button="Comprar"
             />
+            <Foot />
         </div>
     )
 }
