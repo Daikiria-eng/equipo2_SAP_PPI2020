@@ -13,7 +13,8 @@ function SignUp() {
             <label for="SItem9">
                 *Confirmo que este comentario no es despectivo
                 y ya he leído los términos y políticas
-        </label>
+            </label>
+            <button>Enviar</button>
         </div>
     )
 }
