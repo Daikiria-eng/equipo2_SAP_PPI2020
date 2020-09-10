@@ -1,5 +1,5 @@
 import React from 'react';
-//space
+
 function Coffin(props) {
     return (
         <div className="corpse">
