@@ -35,11 +35,11 @@ ReactDOM.render(
         <Route path="/Quienes">
           <Who />
         </Route>
-        <Route path="/Contactanos">
-          <ContactUs />
-        </Route>
         <Route path="/Registrate">
           <SingUp />
+        </Route>
+        <Route path="/Contactanos">
+          <ContactUs />
         </Route>
         <Route to="/Políticas">
           <Terms />
