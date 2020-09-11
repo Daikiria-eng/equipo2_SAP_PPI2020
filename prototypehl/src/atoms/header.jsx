@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Imgs from '../imgs';
 import '../../src/style.css';
 import { Link } from 'react-router-dom';
@@ -10,11 +10,12 @@ class navbar extends Component {
         <header>
           <div className="headernav">
             <input type="checkbox" id="buttonnav" />
-            <label for="buttonnav"><img src={Imgs[0].img} alt="Desplegar" id="buttonNav"/></label>
-            <label for ="buttonNav" for="buttonnav">Desplegar menú</label>
+            <label for="buttonnav"><img src="" alt="Desplegar" id="buttonNav" /></label>
             <nav className="bar">
               <ul id="items">
-                <li id="image_RANK"><img src={Imgs.[0].img} alt="RANK!RANK!" id="navLogo"/></li>
+                <Link to="/">
+                  <li id="image_RANK"><img src={Imgs.[0].img} alt="RANK!RANK!" id="navLogo" /></li>
+                </Link>
                 <Link to="/">
                   <li>Home</li>
                 </Link>
@@ -39,7 +40,7 @@ class navbar extends Component {
               <label for="NameLog">Nombre de usuario</label>
               <input type="text" className="NameLog" />
               <label for="passLog">Contraseña</label>
-              <input type="password" className="passLog"/>
+              <input type="password" className="passLog" />
               <p>¿Has olvidado la contraseña?</p>
               <button id="enterLog">Iniciar</button>
             </div>

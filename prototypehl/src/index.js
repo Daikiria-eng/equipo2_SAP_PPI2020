@@ -41,11 +41,11 @@ ReactDOM.render(
         <Route path="/Registrate">
           <SingUp />
         </Route>
-        <Route path="/productos">
-          <Products />
-        </Route>
         <Route to="/Políticas">
           <Terms />
+        </Route>
+        <Route path="/productos">
+          <Products />
         </Route>    
         <Route path="/">
           <Home />

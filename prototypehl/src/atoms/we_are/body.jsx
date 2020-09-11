@@ -1,5 +1,6 @@
 import React from 'react';
-//space 
+import Imgs from '../../imgs';
+
 function info(){
     return(
         <div className="weare">
@@ -10,6 +11,7 @@ function info(){
             problemas para el abastecimiento. Y con este proyecto,
              lo que haremos es beneficiar a todas estas
             gentes.</p>
+            <img src={Imgs[1].img} alt="Logo"/>
         </div>
     )
 }
