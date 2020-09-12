@@ -15,7 +15,7 @@ function Coffin(props) {
                     )
                 })}
             </div>
-            <h1 id="head_c"> Según tus necesidades</h1>
+            <h1 id="head_c">Según tus necesidades</h1>
             <div className="cards">
                 {props.cards.map((item, index) => {
                     return (
