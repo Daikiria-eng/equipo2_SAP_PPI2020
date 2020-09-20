@@ -1,6 +1,6 @@
 import React from 'react';
 
-function buying() {
+function buying(props) {
     return (
         <>
             <div className="product_to">

@@ -6,6 +6,7 @@ import ContactUs from './pages/contactus';
 import SingUp from './pages/Signu';
 import Products from './pages/products';
 import Terms from './pages/terms';
+import Buy from './pages/SingleProduct';
 import {
   BrowserRouter as Router,
   Switch,
@@ -46,7 +47,10 @@ ReactDOM.render(
         </Route>
         <Route path="/productos">
           <Products />
-        </Route>    
+        </Route>
+        <Route path="/comprar">
+          <Buy />
+        </Route>
         <Route path="/">
           <Home />
         </Route>

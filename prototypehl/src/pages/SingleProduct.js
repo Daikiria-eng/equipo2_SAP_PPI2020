@@ -4,7 +4,7 @@ import Footer from '../atoms/footer';
 import Header from '../atoms/header';
 /*import { render } from '@testing-library/react';*/
 
-function to_buy(props) {
+function to_buy() {
     return (
         <>
             <Header />
