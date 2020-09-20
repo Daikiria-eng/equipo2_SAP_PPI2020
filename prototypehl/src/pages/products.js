@@ -10,24 +10,24 @@ function some(){
             <Prod 
                 cs={[
                     {
-                        names: "producto1",
+                        names: "Limpieza",
                         description: "útil",
-                        button: "Comprar"
+                        button: "Comprar/Ver"
                     },
                     {
-                        names: "producto2",
+                        names: "Comida",
                         description: "igualmente útil",
-                        button: "Comprar"
+                        button: "Comprar/Ver"
                     },
                     {
-                        names: "producto3",
+                        names: "Pasabocas",
                         description: "también útil",
-                        button: "Comprar"
+                        button: "Comprar/Ver"
                     },
                     {
-                        names: "producto4",
+                        names: "aseo personal",
                         description: "resulta útil",
-                        button: "Comprar"
+                        button: "Comprar/Ver"
                     }
                 ]}
             />

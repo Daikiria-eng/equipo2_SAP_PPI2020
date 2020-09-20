@@ -2,7 +2,7 @@ import React from 'react';
 function some_products(props) {
     return (
         <div className="prods">
-            <h1>Algunos productos</h1>
+            <h1>Algunos Carritos</h1>
             {props.cs.map((item, prp) => {
                 return (
                     <div key={prp} className="card">
