@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './styles.scss'
 import App from './pages/app';
 import Who from './pages/we_are';
 import ContactUs from './pages/contactus';
-import SingUp from './pages/Signu';
+import SignUp from './pages/Signu';
 import Products from './pages/products';
 import Terms from './pages/terms';
 import Buy from './pages/SingleProduct';
+import SignUpLike from './pages/select';
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,22 +35,13 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route path="/Quienes">
-          <Who />
-        </Route>
-        <Route path="/Registrate">
-          <SingUp />
-        </Route>
-        <Route path="/Contactanos">
-          <ContactUs />
-        </Route>
-        <Route exact path="/Políticas">
-          <Terms />
-        </Route>
-        <Route path="/productos" component={Products} />
-        <Route path="/comprar">
-          <Buy />
-        </Route>
+        <Route exact path="/Quienes" component={Who} />
+        <Route exact path="/Registrate" component={SignUp} />
+        <Route exact path="/Contactanos" component={ContactUs} />
+        <Route exact path="/Políticas" component={Terms} />
+        <Route exact path="/productos" component={Products} />
+        <Route exact path="/comprar" component={Buy} />
+        <Route exact path="/segundo" component={SignUpLike} />
         <Route exact path="/" component={App} />
       </Switch>
     </Router>

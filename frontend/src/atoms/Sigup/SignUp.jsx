@@ -1,8 +1,11 @@
 import React from 'react';
+import Imgs from '../../imgs'
+import {Link} from 'react-router-dom';
 
 function SignUp() {
     return (
         <>
+        <h1>Información Básica</h1>
         <div className="sign_up">
             <input className="sign_input" id="SItem1" type="text" placeholder="Nombres"/>
             <input className="sign_input" id="SItem2" type="text" placeholder="Apellido"/>
@@ -15,12 +18,14 @@ function SignUp() {
                 y soy consciente que al registrarme,
                 estoy de acuerdo con ellas.
             </label>
-            <button>Registrarme</button>
+            <Link to="/segundo">
+                <button className="r">Registrarme</button>
+            </Link>
         </div>
         <hr id="divider_sign"/>
         <div className="Alternativas">
-            <button><img src="" alt="Registrarse con google"/></button>
-            <button><img src="" alt="Registrarse con Facebook"/></button>
+            <button><img src={Imgs[2].img} alt="Registrarse con google" id="google_logo"/></button>
+            <button><img src={Imgs.[3].img} alt="Registrarse con Facebook" id="facebook_logo"/></button>
         </div>
         </>
     )

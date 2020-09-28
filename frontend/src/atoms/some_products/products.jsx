@@ -11,7 +11,7 @@ function some_products(props) {
                         <p>{item.description}</p>
                         <Link to="/comprar">
                             <button>{item.button}</button>
-                        /</Link>
+                        </Link>
                     </div>
                 )
             })}
