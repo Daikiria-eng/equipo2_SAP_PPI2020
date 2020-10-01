@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../atoms/header';
 import SignLike from '../atoms/signLike/signLike'
 import Footer from '../atoms/footer';
-import Imgs from '../imgs';
+/*import Imgs from '../imgs';*/
 
 function select(){
     return(

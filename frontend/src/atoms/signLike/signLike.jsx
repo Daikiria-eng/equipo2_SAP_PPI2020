@@ -1,5 +1,5 @@
 import React from 'react';
-import Imgs from '../../imgs';
+/*import Imgs from '../../imgs';*/
 
 function select(props) {
     return (

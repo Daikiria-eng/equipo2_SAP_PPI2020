@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles.scss'
+import './styles.scss';
+import './style.css';
 import App from './pages/app';
 import Who from './pages/we_are';
 import ContactUs from './pages/contactus';
