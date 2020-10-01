@@ -26,8 +26,7 @@ a{
     text-align: center;
     margin: 10px 50px;
 }
-
-
+/*________________________________________________*/
 
 ul a{
     color: white;
@@ -161,6 +160,9 @@ li{
 button{
     color: white;
     background-color: rgb(255, 161, 26);
+    :hover{
+        cursor:pointer;
+    }
 }
 .cards{
     text-align: center;
@@ -169,9 +171,6 @@ button{
     justify-items: first baseline;
     max-width: 100%;
     margin: 0.5cm;
-}
-button:hover{
-    cursor: pointer;
 }
 button{
     border-radius: 5px 5px 5px 5px;;
@@ -200,6 +199,9 @@ button{
     max-height: 100%;
     padding: 1px;
     margin-top: 1cm;
+}
+.socialR img{
+    margin: 5px 10.5px;
 }
 /*weare*//*weare*//*weare*//*weare*//*weare*//*weare*//*weare*//*weare*//*weare*//*weare*/
 .weare img{
