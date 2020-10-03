@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Coffin(props) {
     return (
@@ -10,7 +11,7 @@ function Coffin(props) {
                         <div key={`item-title-${index}`} className="card">
                             <h2>{item.name}</h2>
                             <p>{item.desc}</p>
-                            <button>{item.button}</button>
+                            <Link to="/productos"><button>{item.button}</button></Link>
                         </div>
                     )
                 })}
@@ -22,7 +23,7 @@ function Coffin(props) {
                         <div key={`item-title-${index}`} className="card">
                             <h2>{item.name}</h2>
                             <p>{item.desc}</p>
-                            <button>{props.button}</button>
+                            <Link to="/productos"><button>{props.button}</button></Link>
                         </div>
                     )
                 })}

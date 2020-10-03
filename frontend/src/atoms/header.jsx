@@ -14,7 +14,7 @@ class navbar extends Component {
             <nav className="bar">
               <ul id="items">
                 <Link to="/">
-                  <li id="image_RANK"><img src={Imgs.[0].img} alt="RANK!RANK!" id="navLogo" /></li>
+                  <li id="image_RANK"><img src={Imgs[0].img} alt="RANK!RANK!" id="navLogo" /></li>
                 </Link>
                 <Link to="/">
                   <li>Home</li>

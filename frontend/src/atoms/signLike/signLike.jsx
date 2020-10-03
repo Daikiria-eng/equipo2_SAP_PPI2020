@@ -11,8 +11,10 @@ function select(props) {
                         return (
                             <>
                                 <div key={opt} className="User">
+                                <div className="imageuser">
+                                    <img src="" alt={item.alt} id="imageuser"/>
+                                </div>
                                     <h3>{item.title}</h3>
-                                    <img src="" alt={item.alt} />
                                     <p>{item.descript}</p>
                                     <button>{item.button}</button>
                                 </div>

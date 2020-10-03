@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles.scss';
+import './style.scss';
 import './style.css';
 import App from './pages/app';
 import Who from './pages/we_are';
@@ -36,13 +36,13 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route exact path="/Quienes" component={Who} />
-        <Route exact path="/Registrate" component={SignUp} />
-        <Route exact path="/Contactanos" component={ContactUs} />
-        <Route exact path="/Políticas" component={Terms} />
-        <Route exact path="/productos" component={Products} />
-        <Route exact path="/comprar" component={Buy} />
-        <Route exact path="/segundo" component={SignUpLike} />
+        <Route path="/Quienes" component={Who} />
+        <Route path="/Registrate" component={SignUp} />
+        <Route path="/Contactanos" component={ContactUs} />
+        <Route path="/Políticas" component={Terms} />
+        <Route path="/productos" component={Products} />
+        <Route path="/comprar" component={Buy} />
+        <Route path="/segundo" component={SignUpLike} />
         <Route exact path="/" component={App} />
       </Switch>
     </Router>

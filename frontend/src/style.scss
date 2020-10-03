@@ -3,42 +3,62 @@ $transparency: rgba(0, 0, 0, 0.158);
 $text: rgb(255, 255, 255);
 $border: 15px 15px 15px 15px;
 
+body{
+    margin: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 a{
     margin: 0px;
     padding: 0px;
-
     :hover{
-        cursor: pointer;
+        cursor:pointer;
     }
 }
 .options{
     text-align: center;
+    display: inline-block;
     border-radius: $border;
     max-width: 70%;
 }
-.user{
+.User{
+    padding: 13px;
+    margin: 12px;
     background-color: $color;
-    border-color: 10px black solid;
+    border: 1px black solid;
     color: $text;
     border-radius: $border;
+    button{
+        border: 1px black solid; 
+        width: 5cm;
+        height: 1cm;
+        :hover{
+            background-color: $transparency;
+        }
+    }
+}
+.imguser{
+    #imguser{
+        max-width: max-content;
+    }
 }
 #option{
     text-align: center;
+    display: inline-block;
     margin: 10px 50px;
 }
-/*________________________________________________*/
+/*signlike*//*signlike*//*signlike*//*signlike*//*signlike*//*signlike*//*signlike*//*signlike*//*signlike*/
 
 ul a{
-    color: white;
+    color: $text;
     text-decoration: none;
 }
 #cers{
-    color: white;
+    color: $text;
 }
 .LogIn{
     display: none;
     background-color: rgb(255, 161, 26);
-    color: white;
+    color: $text;
     width: 40px;
     padding: 10px;
     height: 40px;
@@ -52,6 +72,7 @@ ul a{
 }
 h1{
     color: rgb(255, 161, 26);
+    margin: 5px 15px;
 }
 input checkbox:hover {
     cursor: pointer;
@@ -96,14 +117,14 @@ header label:hover {
 }
 .bar li a{
     display: block;
-    color: white;
+    color: $text;
     text-decoration: none;
     max-width: 100%;
     max-height: 100%;
     /*padding: 5px 20px;*/
 }
 .bar li:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: $transparency;
     cursor: pointer;
 }
 .bar{
@@ -132,10 +153,23 @@ header label:hover {
         text-align: left;
     }
     .bar li{
-        border-top: 1px solid rgba(0, 0, 0, 0.3);
+        border-top: 1px solid $transparency;
     }
-    #buttonnav:checked ~ .bar{
+    #buttonnav:checked {
+        ~ .bar{
         margin: 0px;
+        }        
+        ~ .headernav{
+            position: fixed;
+        }
+    }
+    #navLogo{
+        margin: 0px;
+        width: 70px;
+        height: 49px;
+    }
+    #image_RANK{
+        margin: 15px;
     }
 }
 li{
@@ -147,10 +181,13 @@ li{
 #image_RANK{
     text-align: left;
     margin-left: 5px;
+    margin-right: 40px;
     padding: 0px;
-}
-#image_RANK:hover{
-    background-color: rgb(255, 161, 26);
+    width: 1cm;
+    height: 1cm;
+    :hover{
+        background-color: rgb(255, 161, 26);
+    }
 }
 /*NavBar divider*//*NavBar divider*//*NavBar divider*//*NavBar divider*//*NavBar divider*//*NavBar divider*/
 .firstCard{
@@ -158,10 +195,13 @@ li{
     border-color: black solid;
 }
 button{
-    color: white;
+    color: $text;
     background-color: rgb(255, 161, 26);
+    border-radius: 5px 5px 5px 5px;
+    padding: 8px 12px;
+    border: none;    
     :hover{
-        cursor:pointer;
+        cursor: pointer;
     }
 }
 .cards{
@@ -172,14 +212,9 @@ button{
     max-width: 100%;
     margin: 0.5cm;
 }
-button{
-    border-radius: 5px 5px 5px 5px;;
-    padding: 8px 12px;
-    border: none;
-}
 .card{
     margin: 0.5cm 0.5cm;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: $border;
     padding: 40px 60px;
     background-color: rbga(0, 0, 0, 3);
     border: 0.1px black solid;
@@ -190,6 +225,10 @@ button{
 }
 #head_c{
     margin-left: 0.5cm;
+}
+/*SingleProduct*//*SingleProduct*//*SingleProduct*//*SingleProduct*//*SingleProduct*//*SingleProduct*/
+.product_to{
+    margin: 27px;
 }
 /*Footer*//*Footer*//*Footer*//*Footer*//*Footer*//*Footer*//*Footer*//*Footer*//*Footer*/
 .down{
@@ -204,14 +243,14 @@ button{
     margin: 5px 10.5px;
 }
 /*weare*//*weare*//*weare*//*weare*//*weare*//*weare*//*weare*//*weare*//*weare*//*weare*/
-.weare img{
-    width: 5.5cm;
-    height: 4.5cm;
-}
 .weare{
     padding: 1.7cm;
     text-align: justify;
     margin: 0.5cm 0.5cm 2cm 0.5cm;
+    img{
+        width: 5.5cm;
+        height: 4.5cm;
+    }
 }
 /*Form*//*Form*//*Form*//*Form*//*Form*//*Form*//*Form*//*Form*//*Form*//*Form*//*Form*/
 .f_form{
@@ -219,10 +258,10 @@ button{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
-}
-.f_form input{
-    margin: 10px;
-    padding: 10px;
+    input{
+        margin: 10px;
+        padding: 10px;
+    }
 }
 #Item4{
     grid-column: 1/3;
@@ -332,4 +371,3 @@ button{
     text-align: justify;
     padding: 3cm;  
 }
-/*Products*//*Products*//*Products*//*Products*//*Products*//*Products*//*Products*//*Products*/

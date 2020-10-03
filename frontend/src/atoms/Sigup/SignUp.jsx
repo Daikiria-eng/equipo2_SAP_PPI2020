@@ -1,5 +1,5 @@
 import React from 'react';
-import Imgs from '../../imgs'
+import Icos from '../../icons';
 import {Link} from 'react-router-dom';
 
 function SignUp() {
@@ -24,8 +24,8 @@ function SignUp() {
         </div>
         <hr id="divider_sign"/>
         <div className="Alternativas">
-            <button><img src={Imgs[2].img} alt="Registrarse con google" id="google_logo"/></button>
-            <button><img src={Imgs.[3].img} alt="Registrarse con Facebook" id="facebook_logo"/></button>
+            <button><img src={Icos[1].img} alt="Registrarse con google" id="google_logo"/></button>
+            <button><img src={Icos[0].img} alt="Registrarse con Facebook" id="facebook_logo"/></button>
         </div>
         </>
     )
