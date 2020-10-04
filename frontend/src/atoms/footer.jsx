@@ -9,8 +9,8 @@ function foot() {
             <Link to="/Políticas"><h3>Políticas y condiciones</h3></Link>
             <div className="socialR">
                 <p>Encuentranos también en:</p>
-                <img src={Icons[0].img} alt="Google"/>
-                <img src={Icons[1].img} alt="Facebook"/>
+                <img src={Icons[0].img} alt="Google" id="Google_image"/>
+                <img src={Icons[1].img} alt="Facebook" id="Facebook-image"/>
             </div>
         </div>
     )

@@ -11,19 +11,19 @@ function app() {
                 title="Algunos productos"
                 cards={[
                     {
-                        name: "Producto1",
-                        desc: "util",
-                        button: "comprar"
+                        name: "Carrito 1",
+                        desc: "Limpieza",
+                        button: "comprar/ver"
                     },
                     {
-                        name: "producto2",
-                        desc: "también útil",
-                        button: "comprar"
+                        name: "Carrito 2",
+                        desc: "Dulces",
+                        button: "comprar/ver"
                     },
                     {
-                        name: "producto3",
-                        desc: "igualmente útil",
-                        button: "comprar"
+                        name: "Carrito 3",
+                        desc: "Comidas",
+                        button: "comprar/ver"
                     }
                 ]}
                 button="Comprar"

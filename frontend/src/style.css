@@ -1,19 +1,31 @@
+/*______________System_________________*/
 body {
   margin: 0px;
   font-family: Georgia, 'Times New Roman', Times, serif; }
 
+button:hover {
+  cursor: pointer; }
+
 a {
   margin: 0px;
   padding: 0px; }
-  a :hover {
+  a:hover {
     cursor: pointer; }
 
 .options {
+  margin-bottom: 3.6cm;
   text-align: center;
-  display: inline-block;
-  border-radius: 15px 15px 15px 15px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  border-radius: black 1px solid;
   max-width: 70%; }
 
+@media only screen and (max-width: 780px) {
+  .options {
+    grid-template-columns: auto auto; } }
+@media only screen and (max-width: 550px) {
+  .options {
+    grid-template-columns: auto; } }
 .User {
   padding: 13px;
   margin: 12px;
@@ -25,8 +37,8 @@ a {
     border: 1px black solid;
     width: 5cm;
     height: 1cm; }
-    .User button :hover {
-      background-color: rgba(0, 0, 0, 0.158); }
+    .User button:hover {
+      background-color: rgba(0, 0, 0, 0.16); }
 
 .imguser #imguser {
   max-width: max-content; }
@@ -122,7 +134,7 @@ header label:hover {
   /*padding: 5px 20px;*/ }
 
 .bar li:hover {
-  background-color: rgba(0, 0, 0, 0.158);
+  background-color: rgba(0, 0, 0, 0.16);
   cursor: pointer; }
 
 .bar {
@@ -151,7 +163,7 @@ header label:hover {
     text-align: left; }
 
   .bar li {
-    border-top: 1px solid rgba(0, 0, 0, 0.158); }
+    border-top: 1px solid rgba(0, 0, 0, 0.16); }
 
   #buttonnav:checked ~ .bar {
     margin: 0px; }
@@ -178,7 +190,7 @@ li {
   padding: 0px;
   width: 1cm;
   height: 1cm; }
-  #image_RANK :hover {
+  #image_RANK:hover {
     background-color: #ffa11a; }
 
 /*NavBar divider*/
@@ -197,24 +209,46 @@ button {
   border-radius: 5px 5px 5px 5px;
   padding: 8px 12px;
   border: none; }
-  button :hover {
+  button:hover {
     cursor: pointer; }
 
 .cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
   text-align: center;
   font-size: 20px;
-  display: flex;
-  justify-items: first baseline;
+  display: grid;
+  grid-template-columns: auto auto auto;
   max-width: 100%;
-  margin: 0.5cm; }
+  margin: 1cm; }
+  .cards h1 {
+    width: max-content;
+    padding: 0px; }
+  .cards p {
+    width: max-content;
+    padding: 0px; }
+  .cards button {
+    width: max-content; }
+  .cards a {
+    width: max-content;
+    margin: 0px;
+    padding: 0px; }
 
+@media only screen and (max-width: 805px) {
+  .cards {
+    grid-template-columns: auto auto; } }
+@media only screen and (max-width: 560px) {
+  .cards {
+    grid-template-columns: auto; } }
 .card {
   margin: 0.5cm 0.5cm;
-  border-radius: 15px 15px 15px 15px;
   padding: 40px 60px;
   background-color: rbga(0, 0, 0, 3);
-  border: 0.1px black solid;
-  display: block;
+  border: black 1px solid;
+  border-radius: 15px 15px 15px 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   width: 10%;
   height: 160px;
   text-align: center; }
@@ -229,7 +263,27 @@ button {
 /*SingleProduct*/
 /*SingleProduct*/
 .product_to {
-  margin: 27px; }
+  margin: 27px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto; }
+  .product_to .visualP {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: auto auto; }
+  .product_to .buy_report {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto; }
+  .product_to .comments {
+    grid-column: 1/3;
+    grid-row: 2/3; }
+  .product_to .Relations_carts {
+    grid-column: 1/3;
+    grid-row: 4/3; }
 
 /*Footer*/
 /*Footer*/
@@ -245,11 +299,21 @@ button {
   text-align: center;
   max-width: 100%;
   max-height: 100%;
-  padding: 1px;
-  margin-top: 1cm; }
+  padding: 10px;
+  margin-top: 1cm;
+  position: 0; }
+  .down a {
+    text-decoration: none;
+    color: white; }
+    .down a:hover {
+      color: rgba(0, 0, 0, 0.16); }
+  .down img:hover {
+    cursor: pointer; }
 
 .socialR img {
-  margin: 5px 10.5px; }
+  margin: 5px 10.5px;
+  width: 37px;
+  height: 37px; }
 
 /*weare*/
 /*weare*/
@@ -286,8 +350,8 @@ button {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(6, 1fr); }
   .f_form input {
-    margin: 10px;
-    padding: 10px; }
+    margin: 10.5px;
+    padding: 10.5px; }
 
 #Item4 {
   grid-column: 1/3; }

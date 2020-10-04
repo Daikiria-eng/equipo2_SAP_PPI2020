@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 function buying(props) {
     return (
@@ -6,12 +7,11 @@ function buying(props) {
             <div className="product_to">
                 <div className="visualP">
                     <img src="" alt="Producto" />
-                    <h2>Nombre del producto</h2>
-                    <p>owner</p>
+                    <h2>Nombre del Carrito</h2>
                 </div>
                 <div className="buy_report">
                     <button>Comprar</button>
-                    <button>Denunciar</button>
+                    <Link to="/Contactanos"><button>Reportar</button></Link>
                 </div>
                 {props.comments.map((item, comms) => {
                     return (
