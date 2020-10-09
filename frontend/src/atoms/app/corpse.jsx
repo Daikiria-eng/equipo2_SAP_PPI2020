@@ -23,7 +23,7 @@ function Coffin(props) {
                         <div key={`item-title-${index}`} className="card">
                             <h2>{item.name}</h2>
                             <p>{item.desc}</p>
-                            <Link to="/productos"><button>{props.button}</button></Link>
+                            <Link to="/productos"><button>{item.button}</button></Link>
                         </div>
                     )
                 })}
