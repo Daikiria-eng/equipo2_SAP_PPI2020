@@ -1,7 +1,6 @@
 import React from 'react';
-/*import Imgs from '../../imgs';*/
 
-function select(props) {
+function select(props){
     return (
         <>
             <h1>Segundo paso</h1>
@@ -11,9 +10,9 @@ function select(props) {
                         return (
                             <>
                                 <div key={opt} className="User">
-                                <div className="imageuser">
-                                    <img src="" alt={item.alt} id="imageuser"/>
-                                </div>
+                                    <div className="imageuser">
+                                        <img src={item.src} alt={item.alt} id="imageuser" />
+                                    </div>
                                     <h3>{item.title}</h3>
                                     <p>{item.descript}</p>
                                     <button>{item.button}</button>

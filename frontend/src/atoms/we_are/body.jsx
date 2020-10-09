@@ -4,7 +4,7 @@ import Imgs from '../../imgs';
 function info(){
     return(
         <div className="weare">
-            <h1>Quienes somo?</h1>
+            <h1>Quienes somos?</h1>
             <p id="infor">Somos un grupo de personas, que 
             quiere benficiar a los dueños de los abarrotes,
             y a las personas vulnerables, drante una pandemia

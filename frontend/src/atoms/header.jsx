@@ -13,25 +13,27 @@ class navbar extends Component {
             <label for="buttonnav"><img src="" alt="Desplegar" id="buttonNav" /></label>
             <nav className="bar">
               <ul id="items">
-                <Link to="/">
+                <Link className="li" to="/">
                   <li id="image_RANK"><img src={Imgs[0].img} alt="RANK!RANK!" id="navLogo" /></li>
                 </Link>
-                <Link to="/">
+                <Link className="li" to="/">
                   <li>Home</li>
                 </Link>
-                <Link to="/quienes">
+                <Link className="li" to="/quienes">
                   <li>Quienes somos</li>
                 </Link>
-                <Link to="/productos">
+                <Link className="li" to="/productos">
                   <li>Productos</li>
                 </Link>
-                <Link to="/contactanos">
+                <Link className="li" to="/contactanos">
                   <li>Contáctanos</li>
                 </Link>
-                <Link to="/Registrate">
+                <Link className="li" to="/Registrate">
                   <li>Registrarse</li>
                 </Link>
+                <Link>
                 <li id="enter">Iniciar sesión</li>
+                </Link>
               </ul>
             </nav>
           </div>

@@ -24,6 +24,10 @@ function app() {
                         name: "Carrito 3",
                         desc: "Comidas",
                         button: "comprar/ver"
+                    },{
+                        name: "Crear",
+                        desc: "crea tu carrito",
+                        button: "+"
                     }
                 ]}
                 button="Comprar"

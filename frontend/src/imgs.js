@@ -4,8 +4,7 @@ import LogoWhite from './assets/RenderLogoWhite.png';
 export default [
     {
         "img": LogoWhite
-    },
-    {
+    },{
         "img": Logo
     },
 ]
