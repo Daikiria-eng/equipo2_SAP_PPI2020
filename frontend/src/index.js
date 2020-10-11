@@ -10,6 +10,11 @@ import Products from './pages/products';
 import Terms from './pages/terms';
 import Buy from './pages/SingleProduct';
 import SignUpLike from './pages/select';
+import Log_in from './pages/iniciacion';
+import Abarrote from './pages/abarrotes';
+
+
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -38,6 +43,7 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route path="/Quienes" component={Who} />
+        <Route path="/iniciar" component={Log_in}/>
         <Route path="/Registrate" component={SignUp} />
         <Route path="/Contactanos" component={ContactUs} />
         <Route path="/Políticas" component={Terms} />
@@ -45,6 +51,9 @@ ReactDOM.render(
         <Route path="/comprar" component={Buy} />
         <Route path="/segundo" component={SignUpLike} />
         <Route exact path="/" component={App} />
+        <Route path="/abarrote" component={Abarrote}/>
+        
+
       </Switch>
     </Router>
   </React.StrictMode>,

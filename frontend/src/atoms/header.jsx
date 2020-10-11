@@ -31,7 +31,7 @@ class navbar extends Component {
                 <Link className="li" to="/Registrate">
                   <li>Registrarse</li>
                 </Link>
-                <Link>
+                <Link to="/Iniciar">
                 <li id="enter">Iniciar sesión</li>
                 </Link>
               </ul>
