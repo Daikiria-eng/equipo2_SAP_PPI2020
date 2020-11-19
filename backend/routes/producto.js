@@ -1,8 +1,8 @@
-const {Router}=require('express');
+const {Router}=require('express);
 const router=Router();
 const mysqlconnection=require('../DB/DB');
 //Sign up product
-router.post('/buscar', (req,res) => {
+router.post('/producto', (req,res) => {
     const {nombre, marca, tipo}=req.body;
     let product = [nombre, marca, tipo];
     mysqlconnection.query('INSERT INTO producto(nombre, marca, tipo) VALUES(?,?,?)',

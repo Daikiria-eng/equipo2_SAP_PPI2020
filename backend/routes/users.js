@@ -10,13 +10,13 @@ router.post('/registrarse', (req, res)=>{
         if(err){
             return console.error(error.message);
         }else{
-            res.json({message: 'Registro existoso'}); 
+            res.json({message: 'Registro existoso'});
         }
     });
 });
 //Log in
 router.get('/usuarios/:codigo_usuario', (req, res)=>{
-    mysqlconnection.query('SELECT * FROM usuarios', (err, rows, fields)=>{
+    mysqlconnection.query('SELECT * FROM usuarios WHERE codigo_usuario=?', (err, rows, fields)=>{
         if(!err){
             res.json(rows);
         }else{
@@ -49,4 +49,4 @@ router.delete('/usuario/:codigo_usuario', (req, res)=>{
         }
     });
 });
-module.exports=router;
+module.exports=mysqlconnection;
