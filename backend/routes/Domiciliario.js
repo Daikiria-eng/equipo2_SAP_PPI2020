@@ -1,52 +1,42 @@
 const {Router}=require('express');
 const router=Router();
 const mysqlconnection=require('../DB/DB');
+//Sig Up
+router.post('/domiciliario', (req, res)=>{
+	const {barrio, ciudad}=req.body;
+	const {codigo_domiciliario}=req.params;
+	let domiciliario=[barrio, ciudad];
+	let new_domiciliario='INSERT INTO domiciliario(codigo_domiciliario, barrio, ciudad) VALUES(?,?,?)';
+	mysqlconnection.query(new_domiciliario, domiciliario, (err, rows, fields)=>{
+		if(!err){
+			res.json({status:'Registro satisfactorio\n'}, rows);
+		}else{
+			console.log(err.message);
+		}
+	});
+});
 //Search
-router.get('/carrito:nombre', (req,res) => {
-    mysqlconnection.query('SELECT * FROM carrito WHERE nombre=?', (err, rows, fields) => {
-        if(err){
-            console.log(err);
-        }else{
-            res.json(rows);
-        }
-    });
+router.get('/domiciliario:barrio', (req, res)=>{
+	const {barrio}=req.params;
+	mysqlconnection.query('SELECT * FROM domiciliario WHERE barrio=?',
+	[barrio], (err, rows, fields)=>{
+		if(!err){
+			res.json(rows);
+		}else{
+			console.log(err.message);
+		}
+	});
 });
-//Create
-router.post('/carrito', (req, res) => {
-    const {nombre_carrito, nombre_productos, productos};
-    let productos=[nombre_carrito, nombre_productos, productos];
-    let queryCarrito='INSERT INTO carrito(nombre_carrito, nombre_productos, productos) VALUES(?,?,?)';
-    mysqlconnection.query(productos, queryCarrito, (err, rows, fields) => {
-        if(!err){
-            console.log(err.message);
-        }else{
-            res.json({status: 'Creación exitosa'});
-        }
-    });
+//Delte
+router.delete('/domiciliario', (req, res)=>{
+	const {barrio, ciudad}=req.body;
+	const {codigo_domiciliario}=req.params;
+	mysqlconnection.query('DELETE FROM domiciliario WHERE codigo_domiciliario=?',
+	[codigo_domiciliario], (err, rows, fields)=>{
+		if(err){
+			console.log(err.message);
+		}else{
+			res.json({status: 'Domiciliario eliminado'});
+		}
+	});
 });
-//Delete
-router.delete('/carrito:codigo_carrito', (req, res) =>{
-    const {codigo_carrito}=req.params;
-    mysqlconnection.query('DELETE FROM carrito WHERE codigo_carrito=?',
-    [codigo_carito], (err, rows, fields)=>{
-        if(err){
-            console.log(err.message);
-        }else{
-            res.json({status: 'Carrito eliminado con exito'});
-        }
-    });
-});
-//Change
-router.put('/carrito:codigo_carrito', (req, res) => {
-    const {nombre_carrito, nombre_productos, productos}=req.body;
-    const {codigo_carrito}=req.params;
-    mysqlconnection.query('UPDATE carrito SET nombre_carrito=?, nombre_productos=?, productos=?',
-    [nombre_carrito, nombre_productos, productos], (err, rows, fields)=>{
-        if(err){
-            console.log(err.message);
-        }else{
-            res.json({status: 'Actualizacion exitosa'});
-        }
-    });
-});
-module.exports=mysqlconnection;

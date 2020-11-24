@@ -14,10 +14,10 @@ router.get('/buscar:nombre', (req, res) =>{
     });
 });
 //sign in
-router.post('/registrar_abarrote', (req, res) => {
-    const {barrio, ciudad, nombre};
-    let new_grocery=[barrio, ciudad, nombre];
-    let queryGrocery='INSET INTO abarrote(barrio, ciudad, nombre) VALUES(?,?,?)';
+router.post('/registrar_abarrote', (req,res) => {
+    const {codigo_abarrote, barrio, ciudad, nombre}=req.body;
+    let new_grocery=[codigo_abarrote, barrio, ciudad, nombre];
+    let queryGrocery='INSET INTO abarrote(codigo_abarrote, barrio, ciudad, nombre) VALUES(?,?,?)';
     mysqlconnection.query(queryGrocery, new_grocery, (err, rows, fields) => {
         if(err){
             console.log(err.message);

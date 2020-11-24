@@ -1,4 +1,4 @@
-const {Router}=require('express);
+const {Router}=require('express');
 const router=Router();
 const mysqlconnection=require('../DB/DB');
 //Sign up product

@@ -12,9 +12,6 @@ import Buy from './pages/SingleProduct';
 import SignUpLike from './pages/select';
 import Log_in from './pages/iniciacion';
 import Abarrote from './pages/abarrotes';
-
-
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -50,10 +47,8 @@ ReactDOM.render(
         <Route path="/productos" component={Products} />
         <Route path="/comprar" component={Buy} />
         <Route path="/segundo" component={SignUpLike} />
-        <Route exact path="/" component={App} />
         <Route path="/abarrote" component={Abarrote}/>
-        
-
+	<Route exact path="/" component={App} />
       </Switch>
     </Router>
   </React.StrictMode>,

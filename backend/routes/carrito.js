@@ -13,10 +13,10 @@ router.get('/carrito:nombre', (req,res) => {
 });
 //Create
 router.post('/carrito', (req, res) => {
-    const {nombre_carrito, nombre_productos, productos};
-    let productos=[nombre_carrito, nombre_productos, productos];
+    const {nombre_carrito, nombre_productos, productos}=req.body;
+    let products=[nombre_carrito, nombre_productos, productos];
     let queryCarrito='INSERT INTO carrito(nombre_carrito, nombre_productos, productos) VALUES(?,?,?)';
-    mysqlconnection.query(productos, queryCarrito, (err, rows, fields) => {
+    mysqlconnection.query(products, queryCarrito, (err, rows, fields) => {
         if(!err){
             console.log(err.message);
         }else{
