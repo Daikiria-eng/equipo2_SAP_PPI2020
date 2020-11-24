@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-11-2020 a las 20:23:15
+-- Tiempo de generación: 24-11-2020 a las 21:37:37
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -28,10 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `abarrote` (
-  `codigo_abarrote` varchar(10) NOT NULL,
-  `barrio` varchar(20) NOT NULL,
-  `ciudad` varchar(20) NOT NULL,
-  `nombre` varchar(20) NOT NULL
+  `codigo` varchar(20) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `Barrio` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -41,10 +40,9 @@ CREATE TABLE `abarrote` (
 --
 
 CREATE TABLE `carrito` (
-  `codigo_producto` varchar(10) NOT NULL,
-  `nombre_carrito` varchar(20) NOT NULL,
-  `nombre_productos` int(10) DEFAULT NULL,
-  `productos` varchar(10) DEFAULT NULL
+  `codigo` varchar(20) NOT NULL,
+  `tipo` varchar(20) NOT NULL,
+  `productos` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -54,9 +52,9 @@ CREATE TABLE `carrito` (
 --
 
 CREATE TABLE `domiciliario` (
-  `codigo_domiciliario` varchar(10) NOT NULL,
-  `barrio` varchar(20) NOT NULL,
-  `ciudad` varchar(20) NOT NULL
+  `codigo` varchar(20) NOT NULL,
+  `abarrote` varchar(10) NOT NULL,
+  `Barrio` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -66,10 +64,9 @@ CREATE TABLE `domiciliario` (
 --
 
 CREATE TABLE `producto` (
-  `codigo_producto` varchar(10) NOT NULL,
-  `nombre` varchar(10) NOT NULL,
-  `marca` varchar(10) NOT NULL,
-  `tipo` varchar(10) NOT NULL
+  `codigo` varchar(20) NOT NULL DEFAULT 'NOT NULL',
+  `nombre` varchar(20) NOT NULL DEFAULT 'NOT NULL',
+  `marca` varchar(20) NOT NULL DEFAULT 'NOT NULL'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -79,10 +76,13 @@ CREATE TABLE `producto` (
 --
 
 CREATE TABLE `usuario` (
-  `codigo_usuario` varchar(10) NOT NULL,
-  `nombre` varchar(10) NOT NULL,
-  `apellidos` varchar(20) NOT NULL,
-  `direccion` varchar(20) NOT NULL
+  `codigo` varchar(20) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `correo` varchar(30) NOT NULL,
+  `contraseña` varchar(100) NOT NULL,
+  `direccion` varchar(20) NOT NULL,
+  `Barrio` varchar(40) NOT NULL,
+  `contrasena` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -93,25 +93,59 @@ CREATE TABLE `usuario` (
 -- Indices de la tabla `abarrote`
 --
 ALTER TABLE `abarrote`
-  ADD PRIMARY KEY (`codigo_abarrote`);
+  ADD PRIMARY KEY (`codigo`),
+  ADD KEY `fk_abarrote_domiciliario` (`Barrio`);
 
 --
 -- Indices de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  ADD PRIMARY KEY (`codigo_producto`);
+  ADD PRIMARY KEY (`codigo`),
+  ADD KEY `fk_carrito_productos` (`productos`);
 
 --
 -- Indices de la tabla `domiciliario`
 --
 ALTER TABLE `domiciliario`
-  ADD PRIMARY KEY (`codigo_domiciliario`);
+  ADD PRIMARY KEY (`codigo`);
+
+--
+-- Indices de la tabla `producto`
+--
+ALTER TABLE `producto`
+  ADD PRIMARY KEY (`codigo`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`codigo_usuario`);
+  ADD PRIMARY KEY (`codigo`),
+  ADD UNIQUE KEY `codigo_usuario` (`codigo`,`correo`),
+  ADD KEY `Barrio` (`Barrio`);
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `abarrote`
+--
+ALTER TABLE `abarrote`
+  ADD CONSTRAINT `fk_abarrote_domiciliario` FOREIGN KEY (`Barrio`) REFERENCES `domiciliario` (`codigo`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_abarrote_usuario` FOREIGN KEY (`Barrio`) REFERENCES `usuario` (`Barrio`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  ADD CONSTRAINT `fk_carrito_productos` FOREIGN KEY (`productos`) REFERENCES `producto` (`codigo`),
+  ADD CONSTRAINT `fk_carrito_usuario` FOREIGN KEY (`codigo`) REFERENCES `usuario` (`codigo`);
+
+--
+-- Filtros para la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `fk_usuario_domiciliario` FOREIGN KEY (`codigo`) REFERENCES `domiciliario` (`codigo`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
