@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Imgs from '../imgs';
+import Rank from '../assets/RenderLogoWhite.png';
 import '../../src/style.css';
 import { Link } from 'react-router-dom';
 
@@ -14,9 +14,9 @@ class navbar extends Component {
             <nav className="bar">
               <ul id="items">
                 <Link className="li" to="/">
-                  <li id="image_RANK"><img src={Imgs[0].img} alt="RANK!RANK!" id="navLogo" /></li>
+                  <li id="image_RANK"><img src={Rank} alt="RANK!RANK!" id="navLogo" /></li>
                 </Link>
-                <Link className="li" to="/">
+                {/*<Link className="li" to="/">
                   <li>Home</li>
                 </Link>
                 <Link className="li" to="/quienes">
@@ -27,7 +27,7 @@ class navbar extends Component {
                 </Link>
                 <Link className="li" to="/contactanos">
                   <li>Contáctanos</li>
-                </Link>
+                </Link>*/}
                 <Link className="li" to="/Registrate">
                   <li>Registrarse</li>
                 </Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../atoms/header';
-import Iniciacion from '../atoms/iniciacion/iniciacion';
+import Iniciacion from '../atoms/log_in/log_in';
 import Footer from '../atoms/footer';
 
 function iniciado(){

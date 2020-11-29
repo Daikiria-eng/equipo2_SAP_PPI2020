@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 function select(props){
     return (
@@ -15,7 +16,9 @@ function select(props){
                                     </div>
                                     <h3>{item.title}</h3>
                                     <p>{item.descript}</p>
-                                    <button>{item.button}</button>
+                                    <Link to={item.link}>
+                                        <button>{item.button}</button>
+                                    </Link>
                                 </div>
                             </>
                         )

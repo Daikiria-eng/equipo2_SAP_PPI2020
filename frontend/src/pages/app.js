@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../atoms/header';
+import Header from '../atoms/header_user';
 import Corpse from '../atoms/app/corpse';
 import Foot from '../atoms/footer';
 function app() {

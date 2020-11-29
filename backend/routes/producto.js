@@ -27,4 +27,4 @@ router.delete('/producto/:codigo_producto', (req, res) =>{
         }
     });
 });
-module.exports=mysqlconnection;
+module.exports=router;

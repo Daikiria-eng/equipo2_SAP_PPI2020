@@ -1,5 +1,5 @@
 import React from 'react';
-import Imgs from '../../imgs';
+import Rank from '../../assets/RenderLogo.png';
 
 function info(){
     return(
@@ -11,7 +11,7 @@ function info(){
             problemas para el abastecimiento. Y con este proyecto,
              lo que haremos es beneficiar a todas estas
             gentes.</p>
-            <img src={Imgs[1].img} alt="Logo"/>
+            <img src={Rank} alt="Logo"/>
         </div>
     )
 }

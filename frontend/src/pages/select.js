@@ -15,19 +15,22 @@ function select(){
                         title: "Usuario",
                         alt: "Imagen de usuario",
                         descript: "Como usuario, será usted quien pide un domicilio (usa el servivicio)",
-                        button: "Ingresar"
+                        button: "Ingresar",
+                        link: "/iniciar"
                     },{
                         src: Icons[3].img,
                         title: "Dueño de abarrote",
                         alt: "Imagen de abarrote",
                         descript: "Como dueño, usted registrará su abarote para proveer productos a quienes le soliciten",
-                        button: "Ingresar"
+                        button: "Ingresar",
+                        link: "/abarrote"
                     },{
                         src: Icons[2].img,
                         title: "Domiciliario",
                         alt: "Imagen de domiciliario",
                         descript: "Como domiciliario, usted se encarga de entregar los domicilios",
-                        button: "Ingresar"                        
+                        button: "Ingresar",
+                        link: "/domiciliario"                       
                     }
                 ]}
             />

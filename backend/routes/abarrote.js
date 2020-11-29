@@ -15,14 +15,15 @@ router.get('/buscar:nombre', (req, res) =>{
 });
 //sign in
 router.post('/registrar_abarrote', (req,res) => {
-    const {codigo_abarrote, barrio, ciudad, nombre}=req.body;
-    let new_grocery=[codigo_abarrote, barrio, ciudad, nombre];
-    let queryGrocery='INSET INTO abarrote(codigo_abarrote, barrio, ciudad, nombre) VALUES(?,?,?)';
+    const {codigo}=req.params;
+    const {nombre, Barrio}=req.body;
+    let new_grocery=[nombre, Barrio];
+    let queryGrocery='INSERT INTO abarrote(Barrio, nombre) VALUES(?,?)';
     mysqlconnection.query(queryGrocery, new_grocery, (err, rows, fields) => {
         if(err){
             console.log(err.message);
         }else{
-            res.json({message: 'Registro Existos'});
+            res.json({message: 'Registro Existoso'});
         }
     });
 });
@@ -51,4 +52,4 @@ router.delete('/abarrote:codigo_abarrote', (req, res) => {
         }
     });
 });
-module.exports=mysqlconnection;
+module.exports=router;

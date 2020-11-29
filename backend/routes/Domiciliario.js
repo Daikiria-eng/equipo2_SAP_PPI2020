@@ -3,10 +3,10 @@ const router=Router();
 const mysqlconnection=require('../DB/DB');
 //Sig Up
 router.post('/domiciliario', (req, res)=>{
-	const {barrio, ciudad}=req.body;
-	const {codigo_domiciliario}=req.params;
-	let domiciliario=[barrio, ciudad];
-	let new_domiciliario='INSERT INTO domiciliario(codigo_domiciliario, barrio, ciudad) VALUES(?,?,?)';
+	const {codigo}=req.params;
+	const {Barrio, nombre, abarrote}=req.body;
+	let domiciliario=[Barrio, nombre, abarrote];
+	let new_domiciliario='INSERT INTO domiciliario(Barrio, nombre, abarrote) VALUES(?,?,?)';
 	mysqlconnection.query(new_domiciliario, domiciliario, (err, rows, fields)=>{
 		if(!err){
 			res.json({status:'Registro satisfactorio\n'}, rows);
@@ -16,10 +16,10 @@ router.post('/domiciliario', (req, res)=>{
 	});
 });
 //Search
-router.get('/domiciliario:barrio', (req, res)=>{
-	const {barrio}=req.params;
-	mysqlconnection.query('SELECT * FROM domiciliario WHERE barrio=?',
-	[barrio], (err, rows, fields)=>{
+router.get('/domiciliario:Barrio', (req, res)=>{
+	const {Barrio}=req.params;
+	mysqlconnection.query('SELECT * FROM domiciliario WHERE Barrio=?',
+	[Barrio], (err, rows, fields)=>{
 		if(!err){
 			res.json(rows);
 		}else{
@@ -27,12 +27,12 @@ router.get('/domiciliario:barrio', (req, res)=>{
 		}
 	});
 });
-//Delte
+//Delete
 router.delete('/domiciliario', (req, res)=>{
-	const {barrio, ciudad}=req.body;
-	const {codigo_domiciliario}=req.params;
-	mysqlconnection.query('DELETE FROM domiciliario WHERE codigo_domiciliario=?',
-	[codigo_domiciliario], (err, rows, fields)=>{
+	const {Barrio, ciudad}=req.body;
+	const {codigo}=req.params;
+	mysqlconnection.query('DELETE FROM domiciliario WHERE codigo=?',
+	[codigo], (err, rows, fields)=>{
 		if(err){
 			console.log(err.message);
 		}else{
@@ -40,3 +40,4 @@ router.delete('/domiciliario', (req, res)=>{
 		}
 	});
 });
+module.exports=router;

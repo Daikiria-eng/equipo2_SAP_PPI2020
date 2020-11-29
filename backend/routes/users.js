@@ -2,21 +2,24 @@ const { Router } = require('express');
 const router = Router();
 const mysqlconnection = require('../DB/DB');
 //Sign in
-router.post('/registrarse', (req, res)=>{
-    const {nombre, apellidos, direccion}=req.body;
-    let User=[nombre, apellidos, direccion];
-    let new_user='INSET INTO (nombre, apellidos, direccion) VALUES(?,?,?,?)';
+router.post('/registrarse', (req, res)=>{ 
+    const {codigo}=req.params;
+    const {nombre, Barrio, direccion, correo, contraseña}=req.body;
+    let User=[nombre, Barrio, direccion, correo, contraseña];
+    let new_user='INSERT INTO usuario(codigo, nombre, Barrio, direccion, correo, contraseña) VALUES(?,?,?,?,?,?)';
     mysqlconnection.query(new_user, User, (err, rows, fields)=>{
         if(err){
-            return console.error(error.message);
+            console.error(err);
         }else{
             res.json({message: 'Registro existoso'});
         }
     });
 });
 //Log in
-router.get('/usuarios/:codigo_usuario', (req, res)=>{
-    mysqlconnection.query('SELECT * FROM usuarios WHERE codigo_usuario=?', (err, rows, fields)=>{
+router.get('/usuarios/:correo', (req, res)=>{ 
+    const {correo}=req.params;
+    mysqlconnection.query('SELECT * FROM usuario WHERE correo=?', [correo], 
+    (err, rows, fields)=>{
         if(!err){
             res.json(rows);
         }else{
@@ -25,10 +28,10 @@ router.get('/usuarios/:codigo_usuario', (req, res)=>{
     });
 });
 //change information
-router.put('/usuarios/:codigo_usuario', (req, res) =>{
-    const {nombre, apellidos, direccion}=req.body;
-    const {codigo_usuario}=req.params;
-    let Update='UPDATE usuario SET nombre=?, apellidos=?, direccion=?';
+router.put('/usuarios/:codigo', (req, res) =>{
+    const {nombre, apellidos, direccion, contrasena, correo}=req.body;
+    const {codigo}=req.params;
+    let Update='UPDATE usuario SET nombre=?, apellidos=?, direccion=?, contrasena=?, correo=?';
     mysqlconnection.query(Update, (err, rows, fields) => {
         if(!err){
             res.json({status: 'Actualización con éxito'});
@@ -38,10 +41,10 @@ router.put('/usuarios/:codigo_usuario', (req, res) =>{
     });
 });
 //Delete user
-router.delete('/usuario/:codigo_usuario', (req, res)=>{
+router.delete('/usuario/:codigo', (req, res)=>{
     const {id}=req.params;
-    mysqlconeccion('DELETE FROM usuario WHERE codigo_usuario=?',
-    [codigo_usuario], (err, rows, fields)=>{
+    mysqlconeccion('DELETE FROM usuario WHERE codigo=?',
+    [codigo], (err, rows, fields)=>{
         if(!err){
             res.json({status: 'Deleción exitosa'});
         }else{
@@ -49,4 +52,4 @@ router.delete('/usuario/:codigo_usuario', (req, res)=>{
         }
     });
 });
-module.exports=mysqlconnection;
+module.exports=router;

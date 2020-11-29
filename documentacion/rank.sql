@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2020 a las 21:37:37
+-- Tiempo de generación: 29-11-2020 a las 22:46:48
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -28,10 +28,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `abarrote` (
-  `codigo` varchar(20) NOT NULL,
+  `codigo` bigint(20) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `Barrio` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `abarrote`
+--
+
+INSERT INTO `abarrote` (`codigo`, `nombre`, `Barrio`) VALUES
+(1, 'Santa Rita ', 'La nueva');
 
 -- --------------------------------------------------------
 
@@ -40,7 +47,7 @@ CREATE TABLE `abarrote` (
 --
 
 CREATE TABLE `carrito` (
-  `codigo` varchar(20) NOT NULL,
+  `codigo` bigint(20) NOT NULL,
   `tipo` varchar(20) NOT NULL,
   `productos` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -52,10 +59,18 @@ CREATE TABLE `carrito` (
 --
 
 CREATE TABLE `domiciliario` (
-  `codigo` varchar(20) NOT NULL,
-  `abarrote` varchar(10) NOT NULL,
-  `Barrio` varchar(40) NOT NULL
+  `codigo` bigint(20) NOT NULL,
+  `Barrio` varchar(40) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `abarrote` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `domiciliario`
+--
+
+INSERT INTO `domiciliario` (`codigo`, `Barrio`, `nombre`, `abarrote`) VALUES
+(1, 'Santa Rita ', 'Juanito', '');
 
 -- --------------------------------------------------------
 
@@ -64,7 +79,7 @@ CREATE TABLE `domiciliario` (
 --
 
 CREATE TABLE `producto` (
-  `codigo` varchar(20) NOT NULL DEFAULT 'NOT NULL',
+  `codigo` bigint(20) NOT NULL,
   `nombre` varchar(20) NOT NULL DEFAULT 'NOT NULL',
   `marca` varchar(20) NOT NULL DEFAULT 'NOT NULL'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -76,14 +91,21 @@ CREATE TABLE `producto` (
 --
 
 CREATE TABLE `usuario` (
-  `codigo` varchar(20) NOT NULL,
+  `codigo` bigint(20) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `correo` varchar(30) NOT NULL,
   `contraseña` varchar(100) NOT NULL,
   `direccion` varchar(20) NOT NULL,
-  `Barrio` varchar(40) NOT NULL,
-  `contrasena` varchar(100) NOT NULL
+  `Barrio` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`codigo`, `nombre`, `correo`, `contraseña`, `direccion`, `Barrio`) VALUES
+(1, 'julian14', 'asd@gmail.com', '123', '123', 'al lado'),
+(2, 'Juanito', 'asdf@gmail.com', '1234', '123B', 'Santa Rita');
 
 --
 -- Índices para tablas volcadas
@@ -124,28 +146,38 @@ ALTER TABLE `usuario`
   ADD KEY `Barrio` (`Barrio`);
 
 --
--- Restricciones para tablas volcadas
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- Filtros para la tabla `abarrote`
+-- AUTO_INCREMENT de la tabla `abarrote`
 --
 ALTER TABLE `abarrote`
-  ADD CONSTRAINT `fk_abarrote_domiciliario` FOREIGN KEY (`Barrio`) REFERENCES `domiciliario` (`codigo`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_abarrote_usuario` FOREIGN KEY (`Barrio`) REFERENCES `usuario` (`Barrio`) ON UPDATE CASCADE;
+  MODIFY `codigo` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Filtros para la tabla `carrito`
+-- AUTO_INCREMENT de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  ADD CONSTRAINT `fk_carrito_productos` FOREIGN KEY (`productos`) REFERENCES `producto` (`codigo`),
-  ADD CONSTRAINT `fk_carrito_usuario` FOREIGN KEY (`codigo`) REFERENCES `usuario` (`codigo`);
+  MODIFY `codigo` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- Filtros para la tabla `usuario`
+-- AUTO_INCREMENT de la tabla `domiciliario`
+--
+ALTER TABLE `domiciliario`
+  MODIFY `codigo` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `producto`
+--
+ALTER TABLE `producto`
+  MODIFY `codigo` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_usuario_domiciliario` FOREIGN KEY (`codigo`) REFERENCES `domiciliario` (`codigo`) ON UPDATE CASCADE;
+  MODIFY `codigo` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
