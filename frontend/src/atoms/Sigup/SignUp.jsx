@@ -1,6 +1,7 @@
 import React from 'react';
-import Icos from '../../icons';
 import { Redirect } from 'react-router-dom';
+import Facebook from '../../assets/icons/facebook_s.png';
+import Google from '../../assets/icons/google_s.png';
 import axios from 'axios';
 
 class SignUp extends React.Component {
@@ -52,8 +53,8 @@ class SignUp extends React.Component {
                 </div>
                 <hr id="divider_sign" />
                 <div className="Alternativas">
-                    <button><img src={Icos[1].img} alt="Registrarse con google" id="google_logo" /></button>
-                    <button><img src={Icos[0].img} alt="Registrarse con Facebook" id="facebook_logo" /></button>
+                    <button><img src={Google} alt="Registrarse con google" id="google_logo" /></button>
+                    <button><img src={Facebook} alt="Registrarse con Facebook" id="facebook_logo" /></button>
                 </div> {this.state.boolean && <Redirect to="/segundo" />}
             </>
         )

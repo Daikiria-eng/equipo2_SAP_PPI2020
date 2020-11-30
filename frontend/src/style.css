@@ -703,6 +703,10 @@ button {
 /*search*/
 /*search*/
 /*search*/
+/*search*/
+/*search*/
+/*search*/
+/*search*/
 .search_margin {
   display: grid;
   grid-template-columns: auto;
@@ -717,5 +721,42 @@ button {
     text-align: center; }
   .search_margin .search_input {
     margin: 10px; }
+
+.search_buttons {
+  text-align: center;
+  margin: 3cm 10px; }
+  .search_buttons .search_button {
+    width: 6cm;
+    margin: 10px; }
+  .search_buttons h1 {
+    margin: 15px; }
+
+/*Accoun*/
+/*Accoun*/
+/*Accoun*/
+/*Accoun*/
+/*Accoun*/
+/*Accoun*/
+/*Accoun*/
+/*Accoun*/
+/*Accoun*/
+/*Accoun*/
+.account_info {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(7, auto);
+  text-align: center;
+  justify-content: center;
+  margin: 26px;
+  position: realtive;
+  right: 10cm; }
+  .account_info input {
+    margin: 15px;
+    padding: 10px;
+    width: 7cm; }
+  .account_info hr {
+    max-width: 100%; }
+  .account_info button {
+    width: 317px; }
 
 /*# sourceMappingURL=style.css.map */

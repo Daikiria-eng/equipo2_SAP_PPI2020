@@ -6,7 +6,7 @@ router.post('/registrarse', (req, res)=>{
     const {codigo}=req.params;
     const {nombre, Barrio, direccion, correo, contraseña}=req.body;
     let User=[nombre, Barrio, direccion, correo, contraseña];
-    let new_user='INSERT INTO usuario(codigo, nombre, Barrio, direccion, correo, contraseña) VALUES(?,?,?,?,?,?)';
+    let new_user='INSERT INTO usuario(nombre, Barrio, direccion, correo, contraseña) VALUES(?,?,?,?,?)';
     mysqlconnection.query(new_user, User, (err, rows, fields)=>{
         if(err){
             console.error(err);
@@ -41,12 +41,12 @@ router.put('/usuarios/:codigo', (req, res) =>{
     });
 });
 //Delete user
-router.delete('/usuario/:codigo', (req, res)=>{
-    const {id}=req.params;
-    mysqlconeccion('DELETE FROM usuario WHERE codigo=?',
+router.delete('/usuario/:nombre', (req, res)=>{
+    const {codigo}=req.params;
+    mysqlconeccion('DELETE FROM usuario WHERE nombre=?',
     [codigo], (err, rows, fields)=>{
         if(!err){
-            res.json({status: 'Deleción exitosa'});
+            res.json({status: 'Usuario eliminado'});
         }else{
             console.log(err);
         }

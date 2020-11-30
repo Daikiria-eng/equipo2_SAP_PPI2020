@@ -1,7 +1,7 @@
 import React from 'react';
 import Prod from '../atoms/some_products/products';
 import Footer from '../atoms/footer';
-import Header from '../atoms/header';
+import Header from '../atoms/header_user';
 
 function some(){
     return(

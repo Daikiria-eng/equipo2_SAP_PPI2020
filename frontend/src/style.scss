@@ -670,7 +670,7 @@ button{
         text-align: centcenter;
     }
 }
-/*search*//*search*//*search*//*search*//*search*//*search*/
+/*search*//*search*//*search*//*search*//*search*//*search*//*search*//*search*//*search*//*search*/
 .search_margin{
     display: grid;
     grid-template-columns: auto;
@@ -684,4 +684,35 @@ button{
     }
     .cards{text-align: center;}
     .search_input{margin: 10px;}
+}
+.search_buttons{
+    text-align: center;
+    margin: 3cm 10px;
+    .search_button{
+        width: 6cm;
+        margin: 10px;
+    }
+    h1{
+        margin: 15px;
+    }
+}
+/*Accoun*//*Accoun*//*Accoun*//*Accoun*//*Accoun*//*Accoun*//*Accoun*//*Accoun*//*Accoun*//*Accoun*/
+.account_info{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(7, auto);
+    text-align: center;
+    justify-content: center;
+    margin: 26px;
+    position: realtive;
+    right: 10cm;
+    input{
+        margin: 15px;
+        padding: 10px;
+        width: 7cm;
+    }
+    hr{max-width: 100%;}
+    button{
+        width: 317px;
+    }
 }

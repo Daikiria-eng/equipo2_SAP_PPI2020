@@ -15,6 +15,10 @@ import Abarrote from './pages/abarrotes';
 import Domiciliary from './pages/domiciliary';
 import Guest from './pages/main_guest';
 import Search from './pages/search';
+import Search_gry from './pages/search_grocery';
+import Search_dlry from './pages/search_domiciliary';
+import Search_kart from './pages/search_kart';
+import Account from './pages/account';
 import {
   BrowserRouter as Router,
   Switch,
@@ -54,6 +58,10 @@ ReactDOM.render(
         <Route path="/abarrote" component={Abarrote} />
         <Route path="/Busqueda" component={Search} />
         <Route path="/principal" component={App} />
+        <Route path="/perfil" component={Account} />
+        <Route path="/buscar_domiciliario" component={Search_dlry} />
+        <Route path="/buscar_carrito" component={Search_kart} />
+        <Route path="/buscar_abarrote" component={Search_gry} />
         <Route exact path="/" component={Guest} />
       </Switch>
     </Router>

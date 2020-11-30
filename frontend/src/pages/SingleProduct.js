@@ -1,7 +1,7 @@
 import React from 'react';
 import Body from '../atoms/product/singleProduct';
 import Footer from '../atoms/footer';
-import Header from '../atoms/header';
+import Header from '../atoms/header_user';
 /*import { render } from '@testing-library/react';*/
 
 function to_buy() {
